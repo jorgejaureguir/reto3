@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
 public class Reservation implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idReservation;
     private Date startDate;
     private Date devolutionDate;
     private String status="created";
@@ -43,7 +43,7 @@ public class Reservation implements Serializable{
     
     @ManyToOne
     @JoinColumn(name="client_id")
-    @JsonIgnoreProperties({"reservations"})
+    @JsonIgnoreProperties({"reservations", "messages"})
     private Client client;
     
     private String score;

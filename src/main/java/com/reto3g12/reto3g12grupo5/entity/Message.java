@@ -30,12 +30,12 @@ import lombok.NoArgsConstructor;
 public class Message implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id; 
+    private int idMessage; 
     private String messageText;
     
     @ManyToOne
     @JoinColumn(name="audience_id")
-    @JsonIgnoreProperties({"messages", "client", "reservations"})
+    @JsonIgnoreProperties({"messages", "reservations", "client"})
     private Audience audience;
 
     @ManyToOne

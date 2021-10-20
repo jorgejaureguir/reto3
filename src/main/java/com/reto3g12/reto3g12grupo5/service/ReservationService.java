@@ -21,22 +21,22 @@ public class ReservationService {
     private ReservationRepository repository;
     
     /**C
-     * Nuevo producto
+     * Nuevo reservacion
      */    
     public Reservation saveReservation(Reservation reservation){
         return repository.save(reservation);
     }
     /**R
-     * Mostrar todos los productos
+     * Mostrar todas los reservaciones
      */
     public List<Reservation> getReservations(){
         return  repository.findAll();
     }
     /**U
-     * Actualizar registros productos
+     * Actualizar registros reservaciones
      */
     public Reservation updateReservation(Reservation reservation){
-        Reservation existeReservation = repository.findById(reservation.getId()).orElse(null);
+        Reservation existeReservation = repository.findById(reservation.getIdReservation()).orElse(null);
         existeReservation.setStartDate(reservation.getStartDate());
         existeReservation.setDevolutionDate(reservation.getDevolutionDate());
         existeReservation.setStatus(reservation.getStatus());
@@ -51,7 +51,7 @@ public class ReservationService {
     
     public String deleteReservation(int id){   
         repository.deleteById(id);
-        return "Client Removido "+id;        
+        return "Reservation Removido "+id;        
     }
 
 }

@@ -35,7 +35,7 @@ public class MessageService {
      * Actualizar registros
      */
     public Message updateMessage(Message message){
-        Message existeMessage = repository.findById(message.getId()).orElse(null);
+        Message existeMessage = repository.findById(message.getIdMessage()).orElse(null);
         existeMessage.setMessageText(message.getMessageText());
         repository.save(existeMessage);
         return existeMessage;
