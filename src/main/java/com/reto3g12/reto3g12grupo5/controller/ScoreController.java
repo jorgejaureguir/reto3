@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Jorge
  */
 @RestController
-@RequestMapping("api/score")
+@RequestMapping("api/Score")
 @CrossOrigin(origins = "*", methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class ScoreController {
     
