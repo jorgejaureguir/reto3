@@ -32,7 +32,7 @@ public class MessageService {
         return repository.findAll();   
     }
     /**U
-     * Actualizar registros
+     * Actualizar registros mensajes
      */
     public Message updateMessage(Message message){
         Message existeMessage = repository.findById(message.getIdMessage()).orElse(null);

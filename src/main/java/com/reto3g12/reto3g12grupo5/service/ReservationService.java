@@ -45,7 +45,7 @@ public class ReservationService {
     }
     /**
      * D
-     * Eliminar Registro de la tabla producto
+     * Eliminar Registro de la tabla reservacion
      * 
      */
     

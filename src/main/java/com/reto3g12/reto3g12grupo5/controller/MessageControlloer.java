@@ -49,7 +49,7 @@ public class MessageControlloer {
     }
    
     @DeleteMapping(path ="/{id}")
-    public ResponseEntity deleteAudience(@PathVariable int id){
+    public ResponseEntity deleteMessage(@PathVariable int id){
         service.deleteMessage(id);
         return ResponseEntity.status(204).build();
     }

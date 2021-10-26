@@ -1,12 +1,12 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package com.reto3g12.reto3g12grupo5.controller;
 
-import com.reto3g12.reto3g12grupo5.entity.Audience;
-import com.reto3g12.reto3g12grupo5.service.AudienceService;
+import com.reto3g12.reto3g12grupo5.entity.Score;
+import com.reto3g12.reto3g12grupo5.service.ScoreService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,39 +26,39 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Jorge
  */
 @RestController
-@RequestMapping("/api/Audience")
+@RequestMapping("api/score")
 @CrossOrigin(origins = "*", methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class AudienceController {
+public class ScoreController {
+    
     @Autowired
-    private AudienceService service;
+    private ScoreService service;
     
     @GetMapping("/all")
-    public List<Audience> findAllAudience(){
-        return service.getAudiences();
+    public List<Score> findAllAdmin(){
+        return service.getScores();
     }
     
     @PostMapping("/save")
-    public ResponseEntity addAudience(@RequestBody Audience audience ){
-        service.saveAudience(audience);
+    public ResponseEntity addScore(@RequestBody Score score ){
+        service.saveScore(score);
         return ResponseEntity.status(201).build();
     }
     
     @PutMapping("/update")
-    public ResponseEntity updateAudience(@RequestBody Audience audience){
-        service.updateAudience(audience);
+    public ResponseEntity updateScore(@RequestBody Score score){
+        service.updateScore(score);
         return ResponseEntity.status(201).build();
     }
     
     @DeleteMapping(path ="/{id}")
-    public ResponseEntity deleteAudience(@PathVariable int id){
-        service.deleteAudience(id);
+    public ResponseEntity deleteScore(@PathVariable int id){
+        service.deleteScore(id);
         return ResponseEntity.status(204).build();
     }
     
     @DeleteMapping("/delete")
-    public ResponseEntity deleteAudience(@RequestBody Audience audience){
-        service.deleteAudience(audience.getId());
+    public ResponseEntity deleteScore(@RequestBody Score score){
+        service.deleteScore(score.getIdScore());
         return ResponseEntity.status(204).build();
     }
-    
 }

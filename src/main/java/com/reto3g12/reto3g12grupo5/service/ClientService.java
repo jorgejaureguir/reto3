@@ -21,19 +21,19 @@ public class ClientService {
     private ClientRepository repository;
     
     /**C
-     * Nuevo producto
+     * Nuevo cliente
      */    
     public Client saveProducto(Client client){
         return repository.save(client);
     }
     /**R
-     * Mostrar todos los productos
+     * Mostrar todos los clientes
      */
     public List<Client> getClients(){
         return  repository.findAll();
     }
     /**U
-     * Actualizar registros productos
+     * Actualizar registros clientes
      */
     public Client updateClient(Client client){
         Client existeClient = repository.findById(client.getIdClient()).orElse(null);
@@ -46,7 +46,7 @@ public class ClientService {
     }
     /**
      * D
-     * Eliminar Registro de la tabla producto
+     * Eliminar Registro de la tabla cliente
      * 
      */
     

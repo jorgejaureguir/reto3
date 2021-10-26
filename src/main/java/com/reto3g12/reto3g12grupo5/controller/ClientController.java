@@ -55,7 +55,7 @@ public class ClientController {
         return ResponseEntity.status(204).build();
     }
     @DeleteMapping("/delete")
-    public ResponseEntity deleteReservation(@RequestBody Client client){
+    public ResponseEntity deleteClient(@RequestBody Client client){
         service.deleteClient(client.getIdClient());
         return ResponseEntity.status(204).build();
     }

@@ -27,14 +27,14 @@ public class CategoryService {
         return repository.save(audience);
     }
     /**R
-     * Mostrar todos los Audiences
+     * Mostrar todos las categorias
      */
     public List<Category> getCategories(){
         return  repository.findAll();
     }
     
     /**U
-     * Actualizar registros Audiences
+     * Actualizar registros categorias
      */
     public Category updateCategory(Category category){
         Category existeCategory = repository.findById(category.getId()).orElse(null);
@@ -45,7 +45,7 @@ public class CategoryService {
     }
     /**
      * D
-     * Eliminar Registro de la tabla Audience
+     * Eliminar Registro de la tabla Categoria
      * 
      */
     

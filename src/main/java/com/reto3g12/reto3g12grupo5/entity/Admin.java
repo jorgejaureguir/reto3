@@ -8,6 +8,7 @@ package com.reto3g12.reto3g12grupo5.entity;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -22,11 +23,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="score")
-public class Score implements Serializable{
+@Table(name="admin")
+public class Admin implements Serializable{
     @Id
-    @GeneratedValue
-    private int idScore;
-    private int score;
-    private String messageScore; 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    private int id;
+    private String name;
+    private String email;
+    private String password;
+    
+    
 }

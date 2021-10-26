@@ -50,7 +50,7 @@ public class ReservationController {
     }
     
     @DeleteMapping(path ="/{id}")
-    public ResponseEntity deleteAudience(@PathVariable int id){
+    public ResponseEntity deleteReservation(@PathVariable int id){
         service.deleteReservation(id);
         return ResponseEntity.status(204).build();
     }
