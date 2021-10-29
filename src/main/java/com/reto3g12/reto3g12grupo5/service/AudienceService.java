@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package com.reto3g12.reto3g12grupo5.service;
-
-
+/**
+ * se importan las librerias
+ */
 import com.reto3g12.reto3g12grupo5.entity.Audience;
 import com.reto3g12.reto3g12grupo5.repository.AudienceRepository;
 import java.util.List;
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Jorge
+ * @author Jorge Jauregui
  */
 @Service
 public class AudienceService {

@@ -7,7 +7,7 @@ package com.reto3g12.reto3g12grupo5.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,9 +32,9 @@ public class Reservation implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idReservation;
-    private Date startDate;
-    private Date devolutionDate;
-    private String status="created";
+    private Calendar startDate;
+    private Calendar devolutionDate;
+    private String status = "created";
     
     @ManyToOne
     @JoinColumn(name="audience_id")
@@ -45,6 +45,8 @@ public class Reservation implements Serializable{
     @JoinColumn(name="client_id")
     @JsonIgnoreProperties({"reservations", "messages"})
     private Client client;
+    
+    
     
     private String score;
 }
